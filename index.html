@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mikhailova Ekaterina</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/media.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="block__header">
+                <div class="block__header_logo">
+                    <div class="header_logo-img">
+                        <img src="/img/user2.jpg" alt="">
+                    </div>
+                </div>
+                <div class="block__header_info">
+                    <div class="header_info-name">
+                        <h1>Mikhailova Ekaterina</h1>
+                    </div>
+                    <div class="header_info-contact">
+                        <div class="info-contact_item">
+                            Email: <a href="mailto:katyamishha@gmail.com">katyamishha@gmail.com</a>
+                        </div>
+                        <div class="info-contact_item">
+                            telegram: <a href="t-do.ru/Katyamishha">@Katyamishha</a>
+                        </div>
+                        <div class="info-contact_item">
+                            github: <a href="https://github.com/katyamishha">katyamishha</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="container">
+            <h2>About me</h2>
+            <div class="block__about">
+                <div class="block__about-item summary">
+                    <h3>Summary</h3>
+                    <p>I have been studying the development for about 5 years. For the last 3 years I have been working in the web studio as a html converter. I am given small tasks that I perform on jQuery. However, I want more development, I want to be
+                        good at JavaScript.</p>
+                </div>
+                <div class="block__about-item skils">
+                    <h3>Skills</h3>
+                    <div class="block__skils">
+                        <div class="block__skils-item">
+                            <div class="skils-item_title">HTML, CSS</div>
+                            <div class="skils-item_progress html_css"></div>
+                        </div>
+                        <div class="block__skils-item">
+                            <div class="skils-item_title">JavaScript</div>
+                            <div class="skils-item_progress js"></div>
+                        </div>
+                        <div class="block__skils-item">
+                            <div class="skils-item_title">jQuery</div>
+                            <div class="skils-item_progress jquery"></div>
+                        </div>
+                        <div class="block__skils-item">
+                            <div class="skils-item_title">Vue.js, Node.js</div>
+                            <div class="skils-item_progress vue_node"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <h2>Code examples</h2>
+            <div class="descr">It was necessary to parse information from the site, difficulties arose in the process, because the site noticed suspicious activity and asked for a captcha</div>
+            <div class="block__code-example">
+                <code>
+                    <pre>
+        var request = require("request"),
+        cheerio = require("cheerio"),
+        fs = require('fs'),
+        url = "https://tld-list.com/tlds-from-a-z";
+            
+        request(url, function(error, response, body) {
+        if (!error) {
+            var $ = cheerio.load(body),
+            reg_number = $(".text-left > a");
+            links = Array.from(reg_number.map(function(index, element) {
+            return {
+                domain: element.childNodes[0].nodeValue,
+                link: element.attribs['href']
+            };
+            }));
+            if (links.length > 0) {
+            var itogJson = JSON.stringify(links, null, 4);
+            fs.writeFileSync("domains.json", itogJson);
+            return;
+            } else {
+            error = "сайт заблокирован";
+            }
+        }
+        console.log("Произошла ошибка: " + error);
+            
+        });
+                    </pre>
+                </code>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <h2>Experience</h2>
+            <div class="descr">I work in web studio, here are some of my recent work.</div>
+            <div class="block__experience">
+                <div class="block__experience-item">
+                    <div class="experience-item_img">
+                        <img src="/img/experience1.png" alt="Пример работы для архитектурного бюро">
+                    </div>
+                    <div class="experience-item_title">Архитектурное бюро</div>
+                    <div class="experience-item_link">
+                        <a href="https://nosorogdesign.ru/">Посмотреть</a>
+                    </div>
+                </div>
+                <div class="block__experience-item">
+                    <div class="experience-item_img">
+                        <img src="/img/experience2.png" alt="Пример работы для архитектурного бюро">
+                    </div>
+                    <div class="experience-item_title">Производственное предприятие</div>
+                    <div class="experience-item_link">
+                        <a href="https://prestige-holding.ru/">Посмотреть</a>
+                    </div>
+                </div>
+                <div class="block__experience-item">
+                    <div class="experience-item_img">
+                        <img src="/img/experience3.png" alt="Пример работы для архитектурного бюро">
+                    </div>
+                    <div class="experience-item_title">Автосервис</div>
+                    <div class="experience-item_link">
+                        <a href="https://sidcov.visiri.ru/">Посмотреть</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <h2>Education</h2>
+            <div class="descr">Master’s degree in Engineering and Technology (not related to iT).</div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <h2>English</h2>
+            <div class="descr">Elementary.</div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer_info">
+                <div class="footer_info-item">
+                    <div class="copyright">© Mikhailova Ekaterna, 2020 гг.</div>
+                </div>
+                <div class="footer_info-item social">
+                    <div class="social_link">
+                        <a href="mailto:katyamishha@gmail.com">
+                            <svg class="soc_icon"><use xlink:href="/img/sprite.svg#gmail"></use></svg>
+                        </a>
+                    </div>
+                    <div class="social_link">
+                        <a href="t-do.ru/Katyamishha">
+                            <svg class="soc_icon"><use xlink:href="/img/sprite.svg#telegram"></use></svg>
+                        </a>
+                    </div>
+                    <div class="social_link">
+                        <a href="https://github.com/katyamishha">
+                            <svg class="soc_icon"><use xlink:href="/img/sprite.svg#github"></use></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
